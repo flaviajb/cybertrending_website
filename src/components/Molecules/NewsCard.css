@@ -1,0 +1,8 @@
+.newsCard{
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-color: gray;
+    padding:10px;
+    margin:15px;
+    padding-bottom: 30px;
+}

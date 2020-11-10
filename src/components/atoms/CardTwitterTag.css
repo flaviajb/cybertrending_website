@@ -1,0 +1,8 @@
+.twiterTag{
+    text-transform:lowercase;
+    font-size:16pt;
+}
+.twitterLink{
+    color: gray;
+    text-decoration: none;
+}
