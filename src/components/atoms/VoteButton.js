@@ -20,13 +20,13 @@ class VoteButton extends React.Component {
         })
     }
     upVote = () => {
-        axios.put(`http://72.167.220.112:9000/noticia/${this.props.id}/upvote`).then(response =>{
+        axios.put(`https://cybertrending.herokuapp.com/noticia/${this.props.id}/upvote`).then(response =>{
             let numUpVotes = response.data.upQtd
             this.setState({upVotes:numUpVotes})
         })
     }
     downVote = () => {
-        axios.put(`http://72.167.220.112:9000/noticia/${this.props.id}/downvote`).then(response =>{
+        axios.put(`https://cybertrending.herokuapp.com/noticia/${this.props.id}/downvote`).then(response =>{
             let numDownVotes = response.data.downQtd
             this.setState({downVotes:numDownVotes})
         })

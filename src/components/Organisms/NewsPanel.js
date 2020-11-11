@@ -15,12 +15,12 @@ class NewsPanel extends React.Component {
     componentDidMount(){
         try{           
             if(this.props.tag)
-                axios.get(`http://72.167.220.112:9000/noticia/${this.props.tag}`).then(response => {
+                axios.get(`https://cybertrending.herokuapp.com/noticia/${this.props.tag}`).then(response => {
                     const noticias = response.data
                     this.setState({noticias})
                 })
             else 
-                axios.get(`http://72.167.220.112:9000/noticia/`).then(response => {
+                axios.get(`https://cybertrending.herokuapp.com/noticia/`).then(response => {
                     const noticias = response.data
                     this.setState({noticias})
                 })            
