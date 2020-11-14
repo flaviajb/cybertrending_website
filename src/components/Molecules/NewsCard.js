@@ -18,8 +18,10 @@ class NewsCard extends React.Component {
         <div class="newsCard">
             <CardTitle urlNoticia={this.props.noticia.urlNoticia} titulo={this.props.noticia.tituloNoticia}/>
             <CardTwitterTag urlTagTwitter={this.props.noticia.urlTagTwitter} tagTwitter={this.props.noticia.tagTwitter}/>
+            <span class="date">{new Date(this.props.noticia.dataInclusao).toLocaleString('pt-BR', {weekday:'long', year:'numeric', month:'long', day:'numeric', hour12:false})}</span>
             <CardNews news={this.props.noticia.conteudoNoticia}/>
             <VoteButton id={this.props.noticia.id} upQtd={this.props.noticia.upQtd} downQtd={this.props.noticia.downQtd} />
+            <span class="fonteLink">Fonte: {this.props.noticia.urlNoticia}</span>
         </div>
     )
   }
