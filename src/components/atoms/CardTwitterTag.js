@@ -11,7 +11,7 @@ class CardTwitterTag extends React.Component {
 
     return(
         <div class="twiterTag">
-              <a class="twitterLink" href={this.props.urlTagTwitter}>
+              <a class="twitterLink" href={this.props.urlTagTwitter} target="_blank" rel="noopener noreferrer">
                 #{this.props.tagTwitter}
               </a>                
         </div>

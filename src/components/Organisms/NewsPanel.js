@@ -12,25 +12,34 @@ class NewsPanel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            noticias: []
+            noticias: [],
+            noticiasFiltradas: []
         }
       }
     componentDidMount(){
         try{           
-            if(this.props.tag)
-                axios.get(`https://cybertrending.herokuapp.com/noticia/${this.props.tag}`).then(response => {
-                    const noticias = response.data
-                    this.setState({noticias})
-                })
-            else 
-                axios.get(`https://cybertrending.herokuapp.com/noticia/`).then(response => {
-                    const noticias = response.data
-                    this.setState({noticias:this.arrangeNoticias(noticias)})
-                })            
+            axios.get(`https://cybertrending.herokuapp.com/noticia/`).then(response => {
+                const noticias = response.data
+                this.setState({noticias:this.arrangeNoticias(noticias)})
+            })           
         }catch(error){
             console.log(error)
         }
     }
+    componentDidUpdate(prevProps){
+        if(this.props.searchParam !== prevProps.searchParam){
+            if(this.props.searchParam === undefined || this.props.searchParam === "" || this.props.searchParam === null){
+                this.setState({noticiasFiltradas: []})
+            }else {                    
+                let noticias = this.state.noticias.filter(noticia => {
+                    return noticia.tagTwitter.indexOf(this.props.searchParam) !== -1;
+                }, this)
+                this.setState({noticiasFiltradas:this.arrangeNoticias(noticias)})
+            }
+            
+        }
+    }
+
     arrangeNoticias = (noticias) => {
         noticias.sort(
             (a,b) => {
@@ -50,10 +59,14 @@ class NewsPanel extends React.Component {
         return noticias
     }
     render(){
-
+        let noticias
+        if(this.state.noticiasFiltradas.length > 0)
+            noticias = this.state.noticiasFiltradas
+        else
+            noticias = this.state.noticias
         return (
             <div class="panel">
-                {this.state.noticias.map(noticia => {
+                {noticias.map(noticia => {
                     return (
                         <>  
                             <Grid container>

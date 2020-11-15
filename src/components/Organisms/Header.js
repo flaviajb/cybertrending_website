@@ -14,31 +14,22 @@ class Header extends React.Component {
         }
       }
     componentDidMount(){
-        try{           
-            axios.get(`http://72.167.220.112:9000/noticia/`).then(response => {
-                const noticias = response.data
-                this.setState({noticias})
-            })            
-        }catch(error){
-            console.log(error)
-        }
     }
     componentDidUpdate(prevProps, prevState){
-
     }
     render(){
         return (
             <>
                 <div class="header">
-                    <Grid xs={true} container={true} alignItems='center' alignContent='center'>
-                        <Grid item={true} xs={true} md={true} alignItems='center' alignContent='center' justify='flex-start'>
+                    <Grid container alignItems='center' alignContent='center'>
+                        <Grid item xs={true} md={9}>
                             <div class="logo">
                                 Cybertrendings
                             </div>
                         </Grid>
-                        <Grid item={true} xs={true} md={true} alignItems='center' alignContent='center' justify='flex-end'>
+                        <Grid item xs={true} md={3}>
                             <div class="search">
-                                <TextField id="busca" label="#hashtag" type="search" size='small' color='primary' margin='none' fullWidth={true}/>
+                                <TextField onChange={(event) => {this.props.searchFunction(event.target.value)}} id="busca" label="#hashtag" type="search" size='small' color='primary' margin='none' fullWidth={true}/>
                             </div>                            
                         </Grid> 
                     </Grid>                                                            

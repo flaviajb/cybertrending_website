@@ -11,7 +11,7 @@ class CardTitle extends React.Component {
 
     return(
         <div class="cardTitle">
-                <a href={this.props.urlNoticia}>
+                <a href={this.props.urlNoticia} target="_blank" rel="noopener noreferrer">
                     {this.props.titulo}
                 </a>
         </div>
