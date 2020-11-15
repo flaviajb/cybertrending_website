@@ -19,7 +19,7 @@ class Header extends React.Component {
         return (
             <>
                 <div class="header">
-                    <Grid container alignItems='center' alignContent='center'>
+                    <Grid container alignItems='center' alignContent='stretch'>
                         <Grid item xs={true} md={9}>
                             <div class="logo">
                                 Cybertrendings

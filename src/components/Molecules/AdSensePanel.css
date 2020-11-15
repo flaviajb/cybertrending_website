@@ -1,4 +1,7 @@
-.panel{
-    text-align: justify;
-    text-justify: inter-word;
+.adSense{
+    border:1px;
+    border-style:dotted;
+    border-color:black;
+    padding:3%;
+    margin-left: 5px;
 }

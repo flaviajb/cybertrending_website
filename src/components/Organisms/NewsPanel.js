@@ -70,16 +70,16 @@ class NewsPanel extends React.Component {
             <div class="panel">
                 {noticias.map(noticia => {
                     return (
-                        <>  
+                        <div class="panel">  
                             <Grid container>
-                                <Grid item md={10}>
+                                <Grid item sm={12} md={10}>
                                     <NewsCard noticia={noticia} />
                                 </Grid>
-                                <Grid item md={2}>
+                                <Grid item sm={12} md={2}>
                                     <AdSensePanel/>
                                 </Grid>
                             </Grid>                             
-                        </>
+                        </div>
                     )
                 })}     
             </div>                   
