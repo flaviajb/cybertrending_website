@@ -1,4 +1,5 @@
 import React from 'react'
+import {Helmet} from "react-helmet"
 
 import './NewsCard.css'
 
@@ -16,12 +17,15 @@ class NewsCard extends React.Component {
 
     return(
         <div class="newsCard">
-            <CardTitle urlNoticia={this.props.noticia.urlNoticia} titulo={this.props.noticia.tituloNoticia}/>
-            <CardTwitterTag urlTagTwitter={this.props.noticia.urlTagTwitter} tagTwitter={this.props.noticia.tagTwitter}/>
-            <span class="date">{new Date(this.props.noticia.dataInclusao).toLocaleString('pt-BR', {weekday:'long', year:'numeric', month:'long', day:'numeric', hour12:false})}</span>
-            <CardNews news={this.props.noticia.conteudoNoticia}/>
-            <VoteButton id={this.props.noticia.id} upQtd={this.props.noticia.upQtd} downQtd={this.props.noticia.downQtd} />
-            <span class="fonteLink">Fonte: {this.props.noticia.urlNoticia}</span>
+          <Helmet>
+                <meta name="description" content={this.props.noticia.conteudoNoticia.substr(0,217)} />
+          </Helmet>
+          <CardTitle urlNoticia={this.props.noticia.urlNoticia} titulo={this.props.noticia.tituloNoticia}/>
+          <CardTwitterTag urlTagTwitter={this.props.noticia.urlTagTwitter} tagTwitter={this.props.noticia.tagTwitter}/>
+          <span class="date">{new Date(this.props.noticia.dataInclusao).toLocaleString('pt-BR', {weekday:'long', year:'numeric', month:'long', day:'numeric', hour12:false})}</span>
+          <CardNews news={this.props.noticia.conteudoNoticia}/>
+          <VoteButton id={this.props.noticia.id} upQtd={this.props.noticia.upQtd} downQtd={this.props.noticia.downQtd} />
+          <span class="fonteLink">Fonte: {this.props.noticia.urlNoticia}</span>
         </div>
     )
   }
