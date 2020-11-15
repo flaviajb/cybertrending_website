@@ -13,6 +13,7 @@ class NewsPanel extends React.Component {
         super(props);
         this.state = {
             noticias: [],
+            loading: false,
             noticiasFiltradas: []
         }
       }
@@ -32,11 +33,12 @@ class NewsPanel extends React.Component {
                 this.setState({noticiasFiltradas: []})
             }else {                    
                 let noticias = this.state.noticias.filter(noticia => {
-                    return noticia.tagTwitter.indexOf(this.props.searchParam) !== -1;
+                    const tag = noticia.tagTwitter.toUpperCase()
+                    const param = this.props.searchParam.toUpperCase()
+                    return tag.indexOf(param) > -1
                 }, this)
                 this.setState({noticiasFiltradas:this.arrangeNoticias(noticias)})
-            }
-            
+            }            
         }
     }
 

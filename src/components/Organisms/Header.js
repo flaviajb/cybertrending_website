@@ -29,7 +29,7 @@ class Header extends React.Component {
                         </Grid>
                         <Grid item xs={true} md={3}>
                             <div class="search">
-                                <TextField onChange={(event) => {this.props.searchFunction(event.target.value)}} id="busca" label="#hashtag" type="search" size='small' color='primary' margin='none' fullWidth={true}/>
+                                <TextField onChange={(event) => {this.props.searchFunction(event.target.value)}} id="busca" label="#" type="search" size='small' color='primary' margin='none' fullWidth={true}/>
                             </div>                            
                         </Grid> 
                     </Grid>                                                            
