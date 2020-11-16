@@ -13,7 +13,7 @@ class Header extends React.Component {
     render(){
         return (
             <>
-                <div class="footer">
+                <div class="footer" data-nosnippet>
                     <Grid container alignItems='center' alignContent='center'>
                         <Grid item xs={true} md={12}>
                             <p>Olá leitor. Aqui no Cybertrending você é quem manda.</p>

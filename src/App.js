@@ -24,7 +24,8 @@ class App extends React.Component {
                   <html lang="pt" amp />
                   <title>CyberTrending - Principais tags do Twitter e notícias relacionadas</title>
                   <meta name="description" content="Olá leitor! Aqui você poderá acessar as principais notícias publicadas na rede relacionadas à tag #TOP1 do Twitter da última hora." />
-                  <meta name="robots" content="index"/>
+                  <meta name="robots" content="nofollow"/>
+                  <meta name="googlebot-news" content="nofollow"/>
                   <link rel="canonical" href="https://cybertrending.com.br" />
         </Helmet>
         <Grid container direction={"column"}>
