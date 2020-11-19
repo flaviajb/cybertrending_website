@@ -13,7 +13,6 @@ class AdSensePanel extends React.Component {
 
         return (
                  <div class="adSense">
-                     Adsense
                      <script data-ad-client="ca-pub-2402874550484901" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                  </div>
         )      
